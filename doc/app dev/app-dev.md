@@ -35,3 +35,37 @@
 - Add Column->Author Field->Author
 - Add Column->Create Date Field->CreatedDate
 - Add Column->Status Field->Status
+- Formula for Author Field-> @Name([CN]@UserName)
+- CreateDate field->Change type to Date/Time->Second tab->Select date and time
+- CreateDate field->Default value->@Now
+- CompleteDate field->Change type to calender control
+- Status field-> Change type to radio button
+    - Provide below choices and make "Active" default
+    - Active
+    - Waiting for more info
+    - Completed
+- Priority field-> Change type to radio button-> Add options 1,2,3
+
+### New View
+- Name: By Category 
+- Alias-> LKUP_Category
+- Add Category column and drag to first column
+- Category column value-> Select Category
+
+### Problem and Answers form
+- Category field->Change to Dialogbox
+    - Add below options, Allow values not in list
+    - R&D
+    - Sales
+    - Operational
+    - IT
+- Category field-> Change to Enter choice on formula
+- Alias-> LKUP_Category
+ - @DbColumn("";"":"";"LKUP_Category";1)
+
+- Objects->Window Title
+    - @If(@IsNewDoc,"P&A New Document","P&A"+Title)
+
+
+
+
