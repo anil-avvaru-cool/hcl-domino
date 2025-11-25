@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dxl:database xmlns:dxl="http://www.lotus.com/dxl">
+  <dxl:design name="IssueForm" type="form">
+    <form>
+      <name>IssueForm</name>
+      <items>
+        <item name="Form"><text>IssueForm</text></item>
+        <item name="IssueID"><flags>computedwhencomposed</flags><text></text></item>
+        <item name="Title"><text></text></item>
+        <item name="Description"><richtext></richtext></item>
+        <item name="Priority"><text>Medium</text></item>
+        <item name="Status"><text>Open</text></item>
+        <item name="CreatedBy"><text></text></item>
+        <item name="CreatedDate"><datetime></datetime></item>
+        <item name="AssignedTo"><text></text></item>
+        <item name="NotifyOnCreate"><text>0</text></item>
+      </items>
+      <formformula><![CDATA[<!-- Design the form in Designer after import; DXL here is a scaffold -->]]></formformula>
+    </form>
+  </dxl:design>
+</dxl:database>

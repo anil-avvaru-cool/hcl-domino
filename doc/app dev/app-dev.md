@@ -66,6 +66,16 @@
 - Objects->Window Title
     - @If(@IsNewDoc,"P&A New Document","P&A"+Title)
 
+### Deploy to server
+- Right click on Application->Application->Access control->Advanced->server->demoDom1/srv/ubs->Action: modify all the name fields
+
+### Access control
+- Right click on Application->Application->Access control->Basics->Default->Access: Author
+
+### HCL nomad environment
+- Runs on mobile phone, tablet, without any modification
+
+
 
 
 

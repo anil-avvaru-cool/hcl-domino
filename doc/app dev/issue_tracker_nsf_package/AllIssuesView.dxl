@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dxl:database xmlns:dxl="http://www.lotus.com/dxl">
+  <dxl:design name="AllIssues" type="view">
+    <view>
+      <name>AllIssues</name>
+      <selectionformula>SELECT Form = "IssueForm"</selectionformula>
+      <columns>
+        <column><title>IssueID</title><formula>IssueID</formula></column>
+        <column><title>Title</title><formula>Title</formula></column>
+        <column><title>Priority</title><formula>Priority</formula></column>
+        <column><title>Status</title><formula>Status</formula></column>
+        <column><title>AssignedTo</title><formula>AssignedTo</formula></column>
+      </columns>
+    </view>
+  </dxl:design>
+</dxl:database>
