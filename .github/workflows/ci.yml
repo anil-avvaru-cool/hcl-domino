@@ -1,0 +1,27 @@
+name: CI - Domino Issue Tracker
+
+# on:
+#   push:
+#     branches: [ main ]  
+on: 
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository structure
+        run: |
+          ls -la
+          test -d scr || (echo "src/ folder missing" && exit 1)
+      - name: Package DXL artifacts
+        run: |
+          mkdir -p build/dxl
+          cp -R src/* build/dxl/
+          echo "Packaged DXL into build/dxl"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dxl-package
+          path: build/dxl
