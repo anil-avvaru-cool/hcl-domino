@@ -1,0 +1,8 @@
+*.nsf
+*.ntf
+.DS_Store
+build/
+*.log
+*.bak
+.vscode/
+.idea/

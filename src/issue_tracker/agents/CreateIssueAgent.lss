@@ -1,6 +1,8 @@
 Option Public
+Use "IssueUtils"
+Use "NotificationUtils"
 Sub Initialize
-    On Error Goto ErrHandler
+    On Error GoTo ErrHandler
     Dim session As New NotesSession
     Dim db As NotesDatabase
     Set db = session.CurrentDatabase
@@ -8,37 +10,25 @@ Sub Initialize
     Dim doc As NotesDocument
     Set doc = db.CreateDocument()
     doc.Form = "IssueForm"
-    doc.IssueID = "ISS-" & Format$(Now, "yyyymmdd-hhnnss")
-    doc.Title = "Sample issue created by agent"
+    doc.IssueID = GenerateIssueID(session)
+    doc.Title = "Sample issue created by CreateIssueAgent"
     Dim rtitem As NotesRichTextItem
     Set rtitem = New NotesRichTextItem(doc, "Description")
     Call rtitem.AppendText("This issue was created by CreateIssueAgent for testing.")
     doc.Priority = "Medium"
-    doc.Status = "Open"
+    doc.Status = "New"
     doc.CreatedBy = session.CommonUserName
     doc.CreatedDate = Now
     doc.AssignedTo = session.CommonUserName
     doc.NotifyOnCreate = "1"
-
     Call doc.Save(True, False)
 
-    ' Notify if needed
     If (doc.NotifyOnCreate(0) = "1") Then
-        Dim maildoc As NotesDocument
-        Set maildoc = db.CreateDocument()
-        maildoc.Form = "Memo"
-        maildoc.SendTo = doc.AssignedTo(0)
-        maildoc.Subject = "New Issue Assigned: " & doc.IssueID(0)
-        maildoc.Body = "A new issue has been created and assigned to you." & Chr(10) & _
-                       "Title: " & doc.Title(0) & Chr(10) & _
-                       "Priority: " & doc.Priority(0) & Chr(10) & _
-                       "Please check the database."
-        Call maildoc.Send(False)
+        Call SendIssueNotification(db, doc.AssignedTo(0), "New Issue Assigned: " & doc.IssueID(0), "Title: " & doc.Title(0))
     End If
 
     Messagebox "Issue created: " & doc.IssueID(0), , "CreateIssueAgent"
     Exit Sub
-
 ErrHandler:
     Messagebox "Error in CreateIssueAgent: " & Err & " - " & Error$, , "Agent Error"
 End Sub
