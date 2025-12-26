@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dxl SYSTEM "xmlschemas/domino_12_0.dtd">
+<dxl xmlns="http://www.lotus.com/dxl" version="12.0">
+  <database>
+    <form name="CommentForm" alias="Comment">
+      <title>Comment</title>
+
+      <!-- ===== Form Properties ===== -->
+      <properties>
+        <property name="$TITLE">
+          <text>Comment</text>
+        </property>
+        <property name="$FormType">
+          <text>Comment</text>
+        </property>
+        <property name="$WindowTitle">
+          <formula>"Add Comment"</formula>
+        </property>
+      </properties>
+
+      <!-- ===== Hidden Metadata Fields ===== -->
+      <item name="Form" type="text" sign="true">
+        <text>CommentForm</text>
+      </item>
+
+      <item name="CommentID" type="text">
+        <formula>@Text(@Unique)</formula>
+      </item>
+
+      <item name="ParentIssueID" type="text">
+        <text></text>
+      </item>
+
+      <item name="ParentUNID" type="text">
+        <text></text>
+      </item>
+
+      <item name="DocType" type="text">
+        <text>Comment</text>
+      </item>
+
+      <!-- ===== Audit Fields ===== -->
+      <item name="CreatedBy" type="text">
+        <formula>@Name([CN]; @UserName)</formula>
+      </item>
+
+      <item name="CreatedOn" type="datetime">
+        <datetime type="created"/>
+      </item>
+
+      <item name="LastModified" type="datetime">
+        <datetime type="modified"/>
+      </item>
+
+      <!-- ===== Visible Fields ===== -->
+
+      <item name="CommentText" type="richtext">
+        <richtext>
+          <pardef/>
+        </richtext>
+      </item>
+
+      <item name="Visibility" type="text">
+        <text>Public</text>
+      </item>
+
+      <!-- ===== Action Buttons ===== -->
+      <item name="$Buttons" type="richtext">
+        <richtext>
+          <pardef/>
+          <par>
+            <run>
+              <font style="bold"/>
+              <text>[ Save Comment ]</text>
+            </run>
+            <action type="formula">
+              <formula>@Command([FileSave]); @Command([FileCloseWindow])</formula>
+            </action>
+          </par>
+          <par>
+            <run>
+              <font style="bold"/>
+              <text>[ Cancel ]</text>
+            </run>
+            <action type="formula">
+              <formula>@Command([FileCloseWindow])</formula>
+            </action>
+          </par>
+        </richtext>
+      </item>
+
+    </form>
+  </database>
+</dxl>
