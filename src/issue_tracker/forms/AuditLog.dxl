@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dxl SYSTEM "xmlschemas/domino_12_0.dtd">
+<dxl xmlns="http://www.lotus.com/dxl" version="12.0">
+  <database>
+
+    <form name="AuditLog" alias="Audit">
+      <title>Audit Log</title>
+
+      <!-- ===== Form Properties ===== -->
+      <properties>
+        <property name="$TITLE">
+          <text>Audit Log</text>
+        </property>
+        <property name="$FormType">
+          <text>Audit</text>
+        </property>
+        <property name="$WindowTitle">
+          <formula>"Audit Log Entry"</formula>
+        </property>
+      </properties>
+
+      <!-- ===== System Fields ===== -->
+      <item name="Form" type="text" sign="true">
+        <text>AuditLog</text>
+      </item>
+
+      <item name="DocType" type="text">
+        <text>Audit</text>
+      </item>
+
+      <item name="AuditID" type="text">
+        <formula>@Text(@Unique)</formula>
+      </item>
+
+      <!-- ===== Issue Linkage ===== -->
+      <item name="ParentIssueID" type="text">
+        <text></text>
+      </item>
+
+      <item name="ParentUNID" type="text">
+        <text></text>
+      </item>
+
+      <!-- ===== Actor Information ===== -->
+      <item name="Actor" type="text">
+        <formula>@Name([CN]; @UserName)</formula>
+      </item>
+
+      <item name="ActorCanonical" type="text">
+        <formula>@UserName</formula>
+      </item>
+
+      <item name="ActorRole" type="text">
+        <text>User</text>
+      </item>
+
+      <!-- ===== Event Information ===== -->
+      <item name="EventType" type="text">
+        <text>Update</text>
+      </item>
+
+      <item name="EventAction" type="text">
+        <text></text>
+      </item>
+
+      <item name="EventDescription" type="text">
+        <text></text>
+      </item>
+
+      <!-- ===== Change Tracking ===== -->
+      <item name="FieldName" type="text">
+        <text></text>
+      </item>
+
+      <item name="OldValue" type="text">
+        <text></text>
+      </item>
+
+      <item name="NewValue" type="text">
+        <text></text>
+      </item>
+
+      <!-- ===== Timestamp ===== -->
+      <item name="EventTime" type="datetime">
+        <datetime type="created"/>
+      </item>
+
+      <!-- ===== Source Info ===== -->
+      <item name="Source" type="text">
+        <text>UI</text>
+      </item>
+
+      <item name="ClientType" type="text">
+        <formula>
+          @If(@IsClient; "Notes";
+          @If(@IsWebClient; "Web"; "Unknown"))
+        </formula>
+      </item>
+
+      <!-- ===== Security ===== -->
+      <item name="ReadOnly" type="number">
+        <number>1</number>
+      </item>
+
+      <!-- ===== Display Section ===== -->
+      <item name="$Body" type="richtext">
+        <richtext>
+          <pardef/>
+          <par>
+            <run><font style="bold"/><text>Audit Event</text></run>
+          </par>
+          <par><text>Actor: </text><computedtext formula="Actor"/></par>
+          <par><text>Action: </text><computedtext formula="EventAction"/></par>
+          <par><text>Description: </text><computedtext formula="EventDescription"/></par>
+          <par><text>Time: </text><computedtext formula="@Text(EventTime)"/></par>
+        </richtext>
+      </item>
+
+      <!-- ===== No Save Button (Immutable) ===== -->
+      <item name="$Buttons" type="richtext">
+        <richtext>
+          <pardef/>
+          <par>
+            <run><font style="bold"/><text>[ Close ]</text></run>
+            <action type="formula">
+              <formula>@Command([FileCloseWindow])</formula>
+            </action>
+          </par>
+        </richtext>
+      </item>
+
+    </form>
+
+  </database>
+</dxl>
