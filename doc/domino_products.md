@@ -1,159 +1,151 @@
-Below is a concise, enterprise-focused list of HCL Domino products and add-ons with their purpose, organized by functional domain.
+Below is a **concise, enterprise-focused list of HCL Domino products and add-ons with their purpose**, organized by functional domain.
 
-Core Domino Platform
+---
 
-HCL Domino Server
+## Core Domino Platform
 
-Core application and messaging server
+* **HCL Domino Server**
 
-Hosts NSF databases, mail, workflows, and web apps
+  * Core application and messaging server
+  * Hosts NSF databases, mail, workflows, and web apps
+  * Provides HTTP, NRPC, SMTP, IMAP, LDAP services
 
-Provides HTTP, NRPC, SMTP, IMAP, LDAP services
+* **HCL Notes Client**
 
-HCL Notes Client
+  * Thick client for mail, calendar, and Domino applications
+  * Supports offline access and rich UI
 
-Thick client for mail, calendar, and Domino applications
+* **HCL Domino Administrator**
 
-Supports offline access and rich UI
+  * Central administration tool
+  * Server, user, security, and database management
 
-HCL Domino Administrator
+* **HCL Domino Designer**
 
-Central administration tool
+  * IDE for developing Domino applications
+  * LotusScript, Java, JavaScript, XPages, Forms, Views
 
-Server, user, security, and database management
+---
 
-HCL Domino Designer
+## Application Development & Modernization
 
-IDE for developing Domino applications
+* **HCL Domino Volt (formerly Leap)**
 
-LotusScript, Java, JavaScript, XPages, Forms, Views
+  * Low-code / no-code application development
+  * Rapid form-based workflow apps
+  * Targets business users and citizen developers
 
-Application Development & Modernization
+* **HCL Domino REST API**
 
-HCL Domino Volt (formerly Leap)
+  * RESTful access to NSF data and Domino services
+  * Enables integration with modern web and cloud apps
+  * Key modernization enabler
 
-Low-code / no-code application development
+* **XPages Runtime**
 
-Rapid form-based workflow apps
+  * Java-based web application framework
+  * Builds JSF-style web UIs on Domino
 
-Targets business users and citizen developers
+---
 
-HCL Domino REST API
+## Collaboration & Messaging
 
-RESTful access to NSF data and Domino services
+* **HCL Nomad**
 
-Enables integration with modern web and cloud apps
+  * Run Notes apps on browsers, iPad, Android
+  * No local Notes client installation
+  * Supports secure mobile access
 
-Key modernization enabler
+* **HCL Verse**
 
-XPages Runtime
+  * Modern web-based mail and calendar client
+  * Replaces traditional Notes mail UI
+  * Integrates with Domino backend
 
-Java-based web application framework
+* **HCL Traveler**
 
-Builds JSF-style web UIs on Domino
+  * Mobile synchronization for mail, calendar, contacts
+  * Supports iOS and Android native mail apps
 
-Collaboration & Messaging
+---
 
-HCL Nomad
+## Security & Identity
 
-Run Notes apps on browsers, iPad, Android
+* **HCL SafeLinx**
 
-No local Notes client installation
+  * Secure remote access and reverse proxy
+  * VPN-less access to Domino and enterprise apps
 
-Supports secure mobile access
+* **ID Vault**
 
-HCL Verse
+  * Centralized storage of Notes user IDs
+  * Simplifies credential management and recovery
 
-Modern web-based mail and calendar client
+* **LDAP / Active Directory Integration**
 
-Replaces traditional Notes mail UI
+  * Centralized authentication and directory sync
+  * Enables SSO and enterprise identity alignment
 
-Integrates with Domino backend
+---
 
-HCL Traveler
+## Administration, Operations & Resilience
 
-Mobile synchronization for mail, calendar, contacts
+* **Domino Cluster**
 
-Supports iOS and Android native mail apps
+  * High availability and failover
+  * Real-time database replication across servers
 
-Security & Identity
+* **DAOS (Domino Attachment and Object Service)**
 
-HCL SafeLinx
+  * Centralized attachment storage
+  * Reduces disk usage and improves performance
 
-Secure remote access and reverse proxy
+* **Domino Domain Monitoring (DDM)**
 
-VPN-less access to Domino and enterprise apps
+  * Health monitoring and alerting
+  * Identifies performance and replication issues
 
-ID Vault
+* **Backup & Archiving Integrations**
 
-Centralized storage of Notes user IDs
+  * Third-party tools (Commvault, Veritas, Veeam, etc.)
+  * NSF, DAOS, and transaction log protection
 
-Simplifies credential management and recovery
+---
 
-LDAP / Active Directory Integration
+## Integration & Extensibility
 
-Centralized authentication and directory sync
+* **SMTP / IMAP / POP Services**
 
-Enables SSO and enterprise identity alignment
+  * Standards-based mail interoperability
 
-Administration, Operations & Resilience
+* **Java & OSGi Framework**
 
-Domino Cluster
+  * Allows enterprise Java integration
+  * Used by XPages and server-side extensions
 
-High availability and failover
+* **Enterprise Integrations**
 
-Real-time database replication across servers
+  * REST, SOAP, MQ, ESB, RPA platforms
+  * Connects Domino to ERP, CRM, and cloud services
 
-DAOS (Domino Attachment and Object Service)
+---
 
-Centralized attachment storage
+## Deployment & Platform Support
 
-Reduces disk usage and improves performance
+* **Domino on Docker / Containers**
 
-Domino Domain Monitoring (DDM)
+  * Modern deployment and CI/CD pipelines
+  * Supports DevOps and cloud-native patterns
 
-Health monitoring and alerting
+* **Domino on Cloud (AWS, Azure, GCP)**
 
-Identifies performance and replication issues
+  * IaaS-based enterprise deployments
+  * Hybrid and DR scenarios
 
-Backup & Archiving Integrations
+---
 
-Third-party tools (Commvault, Veritas, Veeam, etc.)
+## Summary View (One-Line)
 
-NSF, DAOS, and transaction log protection
+> **HCL Domino is a secure enterprise platform combining messaging, low-code app development, workflow automation, and high-availability infrastructure, extended by add-ons for mobility, REST integration, and modernization.**
 
-Integration & Extensibility
-
-SMTP / IMAP / POP Services
-
-Standards-based mail interoperability
-
-Java & OSGi Framework
-
-Allows enterprise Java integration
-
-Used by XPages and server-side extensions
-
-Enterprise Integrations
-
-REST, SOAP, MQ, ESB, RPA platforms
-
-Connects Domino to ERP, CRM, and cloud services
-
-Deployment & Platform Support
-
-Domino on Docker / Containers
-
-Modern deployment and CI/CD pipelines
-
-Supports DevOps and cloud-native patterns
-
-Domino on Cloud (AWS, Azure, GCP)
-
-IaaS-based enterprise deployments
-
-Hybrid and DR scenarios
-
-Summary View (One-Line)
-
-HCL Domino is a secure enterprise platform combining messaging, low-code app development, workflow automation, and high-availability infrastructure, extended by add-ons for mobility, REST integration, and modernization.
+---
